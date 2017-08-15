@@ -280,8 +280,8 @@ fi
 #
 #
 #---------------------------------------------
-read -p "Info: Do you want to install BBR for your system? [y/n]" is_reboot
-if [[ ${is_reboot} == "y" || ${is_reboot} == "Y" ]]; then
+read -p "Info: Do you want to install BBR for your system? [y/n]" is_install
+if [[ ${is_install} == "y" || ${is_install} == "Y" ]]; then
     wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
     chmod +x bbr.sh
     ./bbr.sh
