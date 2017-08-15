@@ -50,7 +50,7 @@ get_char() {
 #
 #---------------------------------------------
 
-if commond -v screen > /dev/null; then
+if command -v screen > /dev/null; then
      echo
 else echo -e "${red}Error: Commond screen doesn't exist.The script will terminate.${plain}"
      exit 1
