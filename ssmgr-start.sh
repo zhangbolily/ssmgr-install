@@ -54,6 +54,7 @@ if commond -v screen > /dev/null; then
      continue
 else echo -e "${red}Error: Commond screen doesn't exist.The script will terminate.${plain}"
      exit 1
+fi
 
 #---------ssmgr node-----------
 read -p "Info: Do you want to start ssmgr node with configuration file /root/.ssmgr/ss.yml? [y/n]" is_start
@@ -132,3 +133,4 @@ if [[ ${is_start} == "y" || ${is_start} == "Y" ]]; then
 fi
 
 screen -ls
+
