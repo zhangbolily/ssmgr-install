@@ -65,7 +65,8 @@ if [[ ${is_start} == "y" || ${is_start} == "Y" ]]; then
          echo " ssmgr is already running."
          echo
          echo "-----------------------------------------------------------------"
-    else if screen -dmS ssmgr ssmgr -c /root/.ssmgr/ss.yml && screen -ls | grep -Eqi 'ssmgr'; then
+    else screen -dmS ssmgr ssmgr -c /root/.ssmgr/ss.yml
+         if   screen -ls | grep -Eqi 'ssmgr'; then
               echo -e "${green}---------- ssmgr ----------${plain}"
               echo "-----------------------------------------------------------------"
               echo " ssmgr start successfuly with configuraion file /root/.ssmgr/ss.yml."
@@ -91,7 +92,8 @@ if [[ ${is_start} == "y" || ${is_start} == "Y" ]]; then
          echo " ssmgr's webgui is already running."
          echo
          echo "-----------------------------------------------------------------"
-    else if screen -dmS webgui ssmgr -c /root/.ssmgr/webgui.yml && screen -ls | grep -Eqi 'webgui'; then
+    else screen -dmS webgui ssmgr -c /root/.ssmgr/webgui.yml
+         if  screen -ls | grep -Eqi 'webgui'; then
               echo -e "${green}---------- ssmgr ----------${plain}"
               echo "-----------------------------------------------------------------"
               echo " ssmgr start successfuly with configuraion file /root/.ssmgr/webgui.yml."
@@ -116,7 +118,8 @@ if [[ ${is_start} == "y" || ${is_start} == "Y" ]]; then
          echo " ss-manager is already running."
          echo
          echo "-----------------------------------------------------------------"
-    else if screen -dmS ss-manager ss-manager -m aes-256-cfb -u --manager-address 127.0.0.1:4000 && screen -ls | grep -Eqi 'ss-manager'; then
+    else screen -dmS ss-manager ss-manager -m aes-256-cfb -u --manager-address 127.0.0.1:4000
+         if   screen -ls | grep -Eqi 'ss-manager'; then
               echo -e "${green}---------- ss-manager ----------${plain}"
               echo "-----------------------------------------------------------------"
               echo " ss-manager start successfuly!"
@@ -133,4 +136,3 @@ if [[ ${is_start} == "y" || ${is_start} == "Y" ]]; then
 fi
 
 screen -ls
-
