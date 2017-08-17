@@ -232,16 +232,9 @@ if [ -f ~/.ssmgr/ss.yml ]; then
      echo " The file ss.yml has been created in folder ~/.ssmgr."
      echo " Please check the file after installation."
      echo " Here is the content of the file:"
-     echo "type: s"
-     echo "empty: false"
-     echo "shadowsocks:"
-     echo "  address: 127.0.0.1:4000"
-     echo "manager:"
-     echo "  address: 0.0.0.0:4001"
-     echo "  password: xxxxxx"
-     echo "db: 'ss.sqlite'"
+     cat ~/.ssmgr/ss.yml
      echo "-----------------------------------------------------------------"
-else 
+else
      echo -e "${red}Error:---------- File Created Failed ----------${plain}"
      echo -e "${red}Error:${plain}The file ss.yml has been created in folder ~/.ssmgr failed."
      echo -e "${red}Error:${plain}Please notify this message and fix it manually."
@@ -280,8 +273,8 @@ fi
 #
 #
 #---------------------------------------------
-read -p "Info: Do you want to install BBR for your system? [y/n]" is_reboot
-if [[ ${is_reboot} == "y" || ${is_reboot} == "Y" ]]; then
+read -p "Info: Do you want to install BBR for your system? [y/n]" is_install
+if [[ ${is_install} == "y" || ${is_install} == "Y" ]]; then
     wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
     chmod +x bbr.sh
     ./bbr.sh
@@ -301,8 +294,7 @@ if [ -f ~/.ssmgr/run_ssmgr.sh ]; then
      echo " The file run_ssmgr.sh has been created in folder ~/.ssmgr."
      echo " Please check the file after installation."
      echo " Here is the content of the file:"
-     echo " screen -dmS ss-manager ss-manager -m aes-256-cfb -u --manager-address 127.0.0.1:4000"
-     echo " screen -dmS ssmgr ssmgr -c /root/.ssmgr/ss.yml"
+     cat ~/.ssmgr/run_ssmgr.sh
      echo "-----------------------------------------------------------------"
 else echo -e "${red}Error:---------- File Created Failed ----------${plain}"
      echo -e "${red}Error:${plain}The file run_ssmgr.sh has been created in folder ~/.ssmgr failed."
@@ -315,4 +307,3 @@ echo "All of the installation work has been done."
 echo -e "${red}You need to check all of the parts if work well.${plain}"
 echo
 echo "----------------------------------------"
-
