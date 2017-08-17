@@ -232,14 +232,7 @@ if [ -f ~/.ssmgr/ss.yml ]; then
      echo " The file ss.yml has been created in folder ~/.ssmgr."
      echo " Please check the file after installation."
      echo " Here is the content of the file:"
-     echo "type: s"
-     echo "empty: false"
-     echo "shadowsocks:"
-     echo "  address: 127.0.0.1:4000"
-     echo "manager:"
-     echo "  address: 0.0.0.0:4001"
-     echo "  password: xxxxxx"
-     echo "db: 'ss.sqlite'"
+     cat ~/.ssmgr/ss.yml
      echo "-----------------------------------------------------------------"
 else
      echo -e "${red}Error:---------- File Created Failed ----------${plain}"
@@ -301,8 +294,7 @@ if [ -f ~/.ssmgr/run_ssmgr.sh ]; then
      echo " The file run_ssmgr.sh has been created in folder ~/.ssmgr."
      echo " Please check the file after installation."
      echo " Here is the content of the file:"
-     echo " screen -dmS ss-manager ss-manager -m aes-256-cfb -u --manager-address 127.0.0.1:4000"
-     echo " screen -dmS ssmgr ssmgr -c /root/.ssmgr/ss.yml"
+     cat ~/.ssmgr/run_ssmgr.sh
      echo "-----------------------------------------------------------------"
 else echo -e "${red}Error:---------- File Created Failed ----------${plain}"
      echo -e "${red}Error:${plain}The file run_ssmgr.sh has been created in folder ~/.ssmgr failed."
