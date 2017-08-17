@@ -59,20 +59,21 @@ fi
 #---------ssmgr node-----------
 read -p "Info: Do you want to start ssmgr node with configuration file /root/.ssmgr/ss.yml? [y/n]" is_start
 if [[ ${is_start} == "y" || ${is_start} == "Y" ]]; then
-    if screen -ls | grep -Eqi 'ssmgr';then
+    if screen -ls | grep -Eqi 'ssmgr'; then
          echo -e "${green}---------- ssmgr ----------${plain}"
          echo "-----------------------------------------------------------------"
          echo " ssmgr is already running."
          echo
          echo "-----------------------------------------------------------------"
     else screen -dmS ssmgr ssmgr -c /root/.ssmgr/ss.yml
-         if   screen -ls | grep -Eqi 'ssmgr'; then
+         sleep 1
+         if screen -ls | grep -Eqi 'ssmgr'; then
               echo -e "${green}---------- ssmgr ----------${plain}"
               echo "-----------------------------------------------------------------"
               echo " ssmgr start successfuly with configuraion file /root/.ssmgr/ss.yml."
               echo
               echo "-----------------------------------------------------------------"
-         else echo -e "${red}Error:${plain}---------- ssmgr start failed! ----------${plain}"
+         else echo -e "${red}Error:---------- ssmgr start failed! ----------${plain}"
               echo
               echo -e "${red}Error:${plain}ssmgr start failed with configuration file /root/.ssmgr/ss.yml."
               echo -e "${red}Error:${plain}Please check if the file exists or configuration file is correct."
@@ -86,20 +87,21 @@ fi
 #---------ssmgr webgui-----------
 read -p "Info: Do you want to start ssmgr webgui with configuration file /root/.ssmgr/webgui.yml? [y/n]" is_start
 if [[ ${is_start} == "y" || ${is_start} == "Y" ]]; then
-    if screen -ls | grep -Eqi 'webgui';then
+    if screen -ls | grep -Eqi 'webgui'; then
          echo -e "${green}---------- ssmgr ----------${plain}"
          echo "-----------------------------------------------------------------"
          echo " ssmgr's webgui is already running."
          echo
          echo "-----------------------------------------------------------------"
     else screen -dmS webgui ssmgr -c /root/.ssmgr/webgui.yml
-         if  screen -ls | grep -Eqi 'webgui'; then
+         sleep 1
+         if screen -ls | grep -Eqi 'webgui'; then
               echo -e "${green}---------- ssmgr ----------${plain}"
               echo "-----------------------------------------------------------------"
               echo " ssmgr start successfuly with configuraion file /root/.ssmgr/webgui.yml."
               echo
               echo "-----------------------------------------------------------------"
-         else echo -e "${red}Error:${plain}---------- ssmgr start failed! ----------${plain}"
+         else echo -e "${red}Error:---------- ssmgr start failed! ----------${plain}"
               echo
               echo -e "${red}Error:${plain}ssmgr start failed with configuration file /root/.ssmgr/webgui.yml."
               echo -e "${red}Error:${plain}Please check if the program exists or configuration file is correct."
@@ -112,20 +114,21 @@ fi
 #---------shadowsocks manyuser-----------
 read -p "Info: Do you want to start ss-manager? [y/n]" is_start
 if [[ ${is_start} == "y" || ${is_start} == "Y" ]]; then
-    if screen -ls | grep -Eqi 'ss-manager';then
+    if screen -ls | grep -Eqi 'ss-manager'; then
          echo -e "${green}---------- ss-manager ----------${plain}"
          echo "-----------------------------------------------------------------"
          echo " ss-manager is already running."
          echo
          echo "-----------------------------------------------------------------"
     else screen -dmS ss-manager ss-manager -m aes-256-cfb -u --manager-address 127.0.0.1:4000
-         if   screen -ls | grep -Eqi 'ss-manager'; then
+         sleep 1
+         if screen -ls | grep -Eqi 'ss-manager'; then
               echo -e "${green}---------- ss-manager ----------${plain}"
               echo "-----------------------------------------------------------------"
               echo " ss-manager start successfuly!"
               echo
               echo "-----------------------------------------------------------------"
-         else echo -e "${red}Error:${plain}---------- ss-manager start failed! ----------${plain}"
+         else echo -e "${red}Error:---------- ss-manager start failed! ----------${plain}"
               echo
               echo -e "${red}Error:${plain}ss-manager start failed."
               echo -e "${red}Error:${plain}Please check if the program exists or configuration is correct."
