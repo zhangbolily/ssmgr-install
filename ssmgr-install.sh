@@ -241,7 +241,7 @@ if [ -f ~/.ssmgr/ss.yml ]; then
      echo "  password: xxxxxx"
      echo "db: 'ss.sqlite'"
      echo "-----------------------------------------------------------------"
-else 
+else
      echo -e "${red}Error:---------- File Created Failed ----------${plain}"
      echo -e "${red}Error:${plain}The file ss.yml has been created in folder ~/.ssmgr failed."
      echo -e "${red}Error:${plain}Please notify this message and fix it manually."
@@ -315,4 +315,3 @@ echo "All of the installation work has been done."
 echo -e "${red}You need to check all of the parts if work well.${plain}"
 echo
 echo "----------------------------------------"
-
